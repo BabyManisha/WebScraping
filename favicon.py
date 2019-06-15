@@ -8,6 +8,11 @@ urls = ["http://babymanisha.com/", "https://www.google.com/", "https://www.linke
 faviconLinks = []
 
 for url in urls:
+#     header = {
+#         'User-Agent': 'My User Agent 1.0',
+#         'From': 'babymaneesha@gmail.com'
+#     }
+#     response = requests.get(url, headers=header)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     faviconTag = soup.find("link", rel="icon")
